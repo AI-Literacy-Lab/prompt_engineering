@@ -1,0 +1,14 @@
+version0: "Extract the important information from this email."
+version1: '''You are a support triage assistant for an online electronics store.
+         Task: read the customer email and extract the fields below.
+         Fields:
+        - order_id (string, or null if not mentioned)
+        - category (one of: damaged_item, delivery_issue, billing_issue, missing_item, return_request, pre_sales_question, other)
+        - urgency (low, medium, high)
+        - customer_sentiment (positive, neutral, negative, angry)
+        - requested_action (short phrase)
+        Return only JSON.'''
+version2: '''Email: "Order 12001 charged twice and the cable is missing.
+  Output: {"order_id":"12001","category":"billing_issue","urgency":"high","customer_sentiment":"negative","requested_action":"refund duplicate charge; resend cable"}
+  Email: "Fantastic, my parcel is delivered but I m staring at an empty doorstep.#12002" 
+  Output: {"order_id":"12002","category":"delivery_issue","urgency":"medium","customer_sentiment":"angry","requested_action":"investigate missing delivery"}'''
